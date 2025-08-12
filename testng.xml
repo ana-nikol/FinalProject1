@@ -1,0 +1,14 @@
+<suite name="finalproject">
+    <listeners>
+        <listener class-name="org.example.utils.TestListener"/>
+    </listeners>
+
+    <test name="login Scenario">
+    <classes>
+      <class name="org.example.tests.LoginTest"/>
+        <class name = "org.example.tests.CategoryTest"/>
+        <class name = "org.example.tests.WishlistTest"/>
+        <class name = "org.example.tests.ApiTest"/>
+    </classes>
+</test>
+</suite>
