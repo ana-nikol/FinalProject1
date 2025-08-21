@@ -18,7 +18,7 @@ public class DriverManager {
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
-            driver = null; // დრაივერი თუ გავთიშე დრაივერი გახადა ნალი , ეს მეთოდი ხურავს დრაივერს
+            driver = null;
         }
 
     }

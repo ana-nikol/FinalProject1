@@ -32,7 +32,6 @@ public class ExtentReportManager {
     public static ExtentTest getTest() {
         return (ExtentTest) test.get();
     }
-
     public static void flushReports() {
         if (extent != null) {
             extent.flush();

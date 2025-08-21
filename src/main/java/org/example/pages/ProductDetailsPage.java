@@ -5,11 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 
 public class ProductDetailsPage extends BasePage {
     public ProductDetailsPage(WebDriver driver) {
-        super(driver);// სუპერით ვწვდები მშობელი კლასის ცვლადებს და მეთოდებს
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -46,7 +45,7 @@ public class ProductDetailsPage extends BasePage {
 
     public void addItemToWishList(String productName) {
         searchInput.clear();
-        enterText(searchInput, productName);   // აქ ტექსტი იწერება
+        enterText(searchInput, productName);
         clickToElement(searchButton);
         clickToElement(selectSecondItem);
         clickToElement(wishListButton);
@@ -68,11 +67,5 @@ public class ProductDetailsPage extends BasePage {
 
     public String getTextFromElement() {
         return getTextFromElement(textFromElement);
-    }
-
-
-    public boolean isAddToCartButtonVisible() {
-        return addToCartBtn.isDisplayed();
-
     }
 }

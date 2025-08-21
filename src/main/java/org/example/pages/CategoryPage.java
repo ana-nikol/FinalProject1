@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CategoryPage extends BasePage {
     public CategoryPage(WebDriver driver) {
-        super(driver);// სუპერით ვწვდები მშობელი კლასის ცვლადებს და მეთოდებს
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -39,11 +39,10 @@ public class CategoryPage extends BasePage {
 
 
 
-
     public void addItemToCart(String productName) {
         searchInput.clear();
-        enterText(searchInput, productName);   // აქ ტექსტი იწერება
-        clickToElement(searchButton);                   // აქ ხდება ღილაკზე დაჭერა
+        enterText(searchInput, productName);
+        clickToElement(searchButton);
         clickToElement(selectFirstItem);
         scrollToElement(addtoCartButton);
         clickToElement(addtoCartButton);

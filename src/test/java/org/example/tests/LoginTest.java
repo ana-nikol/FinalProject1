@@ -6,21 +6,21 @@ import org.testng.annotations.Test;
 
 
 public class LoginTest extends BaseTest {
-@Test
+    @Test
     public void testValidLogin() {  // ავტორიზაცია სწორი მეილით და პაროლით
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("proddevtest72@gmail.com","Test-2025" );
-       loginPage.refreshPage();
-      loginPage.assertEquals(loginPage.getCurrentUrl(), "https://veli.store/");
-}
-
+        loginPage.login(username, password);
+        loginPage.assertTrue(loginPage.isMyAccountVisible(), "ჩემი ველი ღილაკი არ ჩანს ლოგინის შემდეგ");
+        loginPage.refreshPage();
+        loginPage.assertTrue(loginPage.isMyAccountVisible(), "მომხმარებელი არ რჩება დალოგინებული გვერდის განახლების შემდეგ");
+    }
 
 
     @Test
     public void testLoginWithInvalidPassword() {  // აავტორიზაცია სწორი მეილით და არასწორი პაროლით
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("proddevtest72@gmail.com","a@378!" );
-        loginPage.assertEquals("პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს" , loginPage.passwordLengthError());
+        loginPage.login(username, wrongPassword);
+        loginPage.assertEquals(passwordLengthError, loginPage.passwordLengthError());
     }
 
 

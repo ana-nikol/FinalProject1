@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
     public class ConfigReader {
-
         /**
          * Reads the value of a key from the config.properties file
          *
@@ -23,7 +22,6 @@ import java.util.Properties;
             }
             return properties.getProperty(key);
         }
-
 
         /**
          * simple alias for the read method to get the value of a key.

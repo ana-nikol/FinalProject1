@@ -12,10 +12,7 @@ public class Utils {
     public static void logFail(String message) {
         if (ExtentReportManager.getTest() != null)
             ExtentReportManager.getTest().fail(message);
-
-
     }
-    //  System.out.println(message);
 
     public static void logPass(String message) {
         if (ExtentReportManager.getTest() != null)

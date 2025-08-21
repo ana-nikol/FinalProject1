@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.text.Normalizer;
 import java.time.Duration;
 
 public class BasePage {
@@ -38,7 +39,7 @@ public class BasePage {
     public void enterText(WebElement locator, String text) {
         waitForElementToBeVisible(locator);
         locator.sendKeys(text);
-        Utils.logInfo("sendkey:   [ " + text + " ] to element: " + locator); // ამ მეთოდში გადაცემულია ვებელემენტი  და ტექსტი
+        Utils.logInfo("sendkey:  [ " + text + " ] to element: " + locator); // ამ მეთოდში გადაცემულია ვებელემენტი  და ტექსტი
         // რომელ ელემენტში რა ტექსტი უნდა ჩაწეროს
 
     }
@@ -74,11 +75,6 @@ public class BasePage {
 
     }
 
-    public String getCurrentUrl() {
-        Utils.logInfo("get current url" + driver.getCurrentUrl());
-        return driver.getCurrentUrl();
-
-    }
 
     public String getTextFromElement(WebElement locator) { // ეს მეთოდი დამიბრუნებს იმ ელემენტის ტექსტს რასაც გადავცემ
         waitForElementToBeVisible(locator);
@@ -87,13 +83,6 @@ public class BasePage {
 
     }
 
-    public String getCssValue(WebElement locator, String propertyName) {
-        waitForElementToBeVisible(locator);
-        Utils.logInfo("Property name" + propertyName);
-        return locator.getCssValue(propertyName);
-
-
-    }
 
     public void scrollToElement(WebElement element) {
         waitForElementToBeVisible(element);
@@ -105,4 +94,6 @@ public class BasePage {
     public void assertTrue(boolean condition, String message) {
         Assert.assertTrue(condition, message);
     }
+
+
 }
